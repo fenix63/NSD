@@ -19,7 +19,7 @@
                 <div class="col-lg-12 text-center">
                     <h1>Борис Леонидович Пастернак</h1>
                     <h4>Русский поэт, писатель и переводчик</h4>
-                    <button>Скролл</button>
+                    <button class="scroll-down" href="#form">Скролл</button>
                 </div>
             </div>
         </div>
@@ -28,29 +28,28 @@
         
             <div class="container h-100">
               <div class="row h-100 justify-content-center align-items-center">
-                <form class="col-12">
+                <form class="col-lg-9 validate" action="" type="POST" id="form">
                     <div class="form-head text-center">Форма</div>
                       <div class="form-group">
                         
-                        <input type="text" name="name" class="form-control" id="formGroupExampleInput" placeholder="Имя">
+                        <input type="text" name="name"  title="Можно использовать только кириллицу" required class="form-control" id="formGroupExampleInput" placeholder="Имя">
                         <span class="error-text"></span>
                       </div>
                       <div class="form-group">
                         
-                        <input type="email" name="email" class="form-control" id="formGroupExampleInput2" placeholder="E-mail">
+                        <input type="email" name="email" class="form-control required" id="formGroupExampleInput2" placeholder="E-mail">
                         <span class="error-text"></span>
                       </div>
                       <div class="form-group">
                         
-                        <input type="text" name="phone" class="form-control" id="formGroupExampleInput2" placeholder="Телефон">
+                        <input type="text" name="phone" class="form-control required" id="formGroupExampleInput2" placeholder="Телефон">
                         <span class="error-text"></span>
                       </div>
 
-                      <div class="agree">
-                          <!-- <input type="checkbox" name="agree" id="agree-btn"/> -->
-                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHmSURBVGhD7drPLgNRFMfxvgveRDrjDYQtSrcWeIF2aq1hITQRNhY8AZtmZixI09SfNBoLIopihai65pfOpH9y+ifm3vZE7km+m7aTnE9ud3MjerjPeMoZMyw7Fk04Sxyr72aP+uvSY1huzEw51en02Xs8U2DZlLcbdjRT7py/dutAiR/snpTFzdsP63acB4FdyZPBkeEkqAc5hpMxEva8v35jopazPLeV/6Qe4hh2NZJ20l+/MRoypDSEWxrCLQ0ZVIe5iriu1MjvmmMN2c7eC9NyxOLeZU8MW0iAMPx6YVhC2hFoZjMvzstf5O8RO0gnRKELArGC/BWB2EDCIBALSFgEGjpEBgJJg5ReauLqqUp+1ylZCCQFUnqtiZX9oohnCuLisT+MTAQKDQkQwTL9YGQjUGjIQe65ZSHUDaMCgUJD0PrxXctiaIHAqEIgKRDUC6MSgaRBUCdM+uhWKQJJhSAK055sBJIOQd0wKhBICQRRGFUIpAyCmjEqEUgpBG14GNUIpByCipVv8nOZDQQyiDSEWxrCLQ3h1v+H4PU0XvlSD3Fscu30g3497V8YwMt46kFO1S8MuPSFAQyuRQCDkwmuTHCrfoXDrU5Yzqy/Nj3manYER+b91SyWebthR39dPUwnEvkFXc3E+VGY9pwAAAAASUVORK5CYII=">
-                          <label for="agree-btn">Согласие на обработку персональных данных</label>
-                      </div>
+                        <div class="agree">
+                            <input type="checkbox" name="agree" id="agree-btn"/>
+                            <label for="agree-btn">Согласие на обработку персональных данных</label>
+                        </div>
                         <div class="form-group text-center">
                             <input type="submit" value="Отправить"/>
                         </div>
@@ -66,8 +65,60 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="js/jquery-3.1.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/jquery.maskedinput.js" type="text/javascript"></script>
+
+    <script>
+      $(document).ready(function(){
+        $('input[name="phone"]').mask("8 999 999-99-99");
+
+        $('.scroll-down').click(function(e){
+          e.preventDefault();
+          var elementClick = $(this).attr("href");
+          var destination = $(elementClick).offset().top;
+
+          
+          $('html').animate({ scrollTop: destination }, 1100);
+          
+          return false; 
+        });
+
+        $('input[name="name"]').blur(function(){
+          var val = $(this).val();
+          var pattern = /^[А-Яа-яЁё]+$/;
+
+          if(!pattern.test(val)){
+            alert('некорректное имя');
+          }
+
+          console.log(val);
+        });
+
+        $('.content form').validate({
+          rules: {
+            /*name: {
+              required: true
+            },*/
+            email: {
+              required: true
+            }
+          },
+
+          messages: {
+            /*name: {
+              required: 'Поле имя заполнено неверно, Допускаются символы кириллицы, символы (.-_) и цифры',
+            },*/
+            email: {
+              required: 'Неправильный формат e-mail адреса, пример: test@nsd.ru'
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

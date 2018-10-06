@@ -123,3 +123,7 @@ form input[type="submit"]{
     font-size: 12px;
     cursor:pointer;
 }
+
+label.error{
+    color: red;
+}
