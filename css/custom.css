@@ -1,0 +1,125 @@
+@font-face{
+    font-family: 'Roboto-bold';
+    src: url('../font/Roboto-bold.ttf') format("ttf");
+}
+
+@font-face{
+    font-family: 'Roboto-regular';
+    src: url('../font/Roboto-regular.ttf') format("ttf");
+}
+
+@font-face{
+    font-family: 'Roboto-light';
+    src: url('../font/Roboto-light.ttf') format("ttf");
+}
+
+body{
+    background-color: #cbcbcb;
+}
+
+header{
+    width: 100%;
+    height: 947px;
+    background-image: url('../img/bg2.svg');
+
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position-x:center;
+    background-position-y:center;
+    /*background-color: rgba(125, 46, 185, 0.45);*/
+}
+
+h1{
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 64px;
+    color: #fff;
+    margin-top: 300px;
+    font-weight: bold;
+    
+}
+
+h4{
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto-regular', sans-serif;
+    font-size: 24px;
+}
+
+header button{
+    width: 255px;
+    height: 41px;
+    background-color: #4CAF50;
+    border: 0px;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 167px;
+}
+
+.content{
+    background-color: #fff;
+    padding-top: 41px;
+    margin-left:10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    box-shadow: 1px 3px 10px 1px rgba(0,0,0,0.5);
+}
+
+.content .form-head{
+    font-size: 41px;
+    font-family: 'Roboto-light', sans-serif;
+    line-height: 48px;
+}
+
+form .form-group input[name="name"], form .form-group input[name="email"], form .form-group input[name="phone"]{
+    font-family: 'Roboto-regular', sans-serif;
+    font-size: 14px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid #000;
+    outline:0;
+    box-shadow: none;
+    padding-left: 0px;
+    border-radius:0px;
+    color: #000;
+}
+
+form .form-group input[name="name"]:active, :hover, :focus,  form .form-group input[name="email"]:active, :hover, :focus, form .form-group input[name="phone"]:active, :hover, :focus{
+    outline:0;   
+    box-shadow: none;
+}
+
+
+form .form-group input[name="name"]:focus, form .form-group input[name="email"]:focus, form .form-group input[name="phone"]:focus{
+    margin-left: 12px;
+    border-bottom: 2px solid #9C27B0;
+}
+
+input::-webkit-input-placeholder{
+    color: #E5E5E5;
+    font-family: 'Roboto-regular', sans-serif;
+    font-size: 14px;
+}
+
+.agree label{
+    font-family: 'Roboto-light', sans-serif;
+    font-size: 14px;
+    color: #aaa;
+}
+
+form input[type="submit"]{
+    width: 119px;
+    height: 41px;
+    margin: 0 auto;
+    background: #4CAF50;
+    border: 0px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Roboto-regular', sans-serif;
+    font-size: 12px;
+    cursor:pointer;
+}
