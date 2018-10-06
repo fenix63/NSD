@@ -47,9 +47,31 @@
                       </div>
 
                         <div class="agree">
-                            <input type="checkbox" name="agree" id="agree-btn"/>
-                            <label for="agree-btn">Согласие на обработку персональных данных</label>
+
+                          <!-- <input type="checkbox" name="agree" id="agree-btn"/>
+                          <label for="agree-btn" >
+                            Согласие на обработку персональных данных
+                          </label> -->
+                            
+                            
+                          
+
+                          <label>
+                            <input type="checkbox" value="1" name="k">
+                              Согласие на обработку персональных данных
+                            <span></span>
+                          </label>
+
                         </div>
+
+                        <!-- <div class="agree">
+                            <input type="checkbox" name="agree" id="agree-btn" />
+                            <span class="true"></span>
+                            <label for="agree-btn">Согласие на обработку персональных данных</label>
+                        </div> -->
+
+
+
                         <div class="form-group text-center">
                             <input type="submit" value="Отправить"/>
                         </div>
@@ -87,6 +109,27 @@
           
           return false; 
         });
+
+        // $('.agree span').on('click', function(){
+        //   if($('.agree input[type="checkbox"]').is(':checked')){
+
+        //       $('.agree input[type="checkbox"]').removeClass('true');
+              
+              
+        //   }else{
+        //     $('.agree input[type="checkbox"]').addClass('true');
+            
+        //   }
+        // });
+
+        // $('.agree label').on('click', function(){
+        //   if($('.agree input[type="checkbox"]').is(':checked')){
+        //     $('.agree input[type="checkbox"]').addClass('true');
+            
+        //   }else{
+        //     $('.agree input[type="checkbox"]').removeClass('true');
+        //   }
+        // });
 
         $('input[name="name"]').blur(function(){
           var val = $(this).val();
