@@ -1,3 +1,4 @@
+#!/usr/bin/email.php
 <?
 
 
